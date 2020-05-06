@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="{{tpl:BlogLanguage}}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="ROBOTS" content="{{tpl:BlogMetaRobots robots="NOINDEX,NOARCHIVE"}}" />
+
+  <title>{{tpl:lang Page not found}} - {{tpl:BlogName encode_html="1"}}</title>
+  <meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+  <meta name="author" content="{{tpl:BlogEditor encode_html="1"}}" />
+
+  <link rel="contents" title="{{tpl:lang Archives}}" href="{{tpl:BlogArchiveURL}}" />
+  <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="{{tpl:BlogFeedURL type="atom"}}" />
+
+  {{tpl:include src="_head.html"}}
+</head>
+
+<body class="dc-404">
+<div class="container" id="page">
+
+  {{tpl:include src="_top.html"}}
+
+  <h2>{{tpl:lang page not found, a haïku}}</h2>
+  <br />
+  <h3>俳句</h3>
+  <br />
+  <div class="post">
+    <p>{{tpl:lang our}} <a href="archive">{{tpl:lang search}}</a> {{tpl:lang is lonely}}</p>
+    <p>{{tpl:lang a footprint left in pure snow}}</p>
+    <p>{{tpl:lang blown into}} <a href="{{tpl:BlogURL}}">{{tpl:lang nothing}}</a></p>
+  </div>
+  <br />
+  <br />
+
+  {{tpl:include src="_footer.html"}}
+
+</div> <!-- End .container #page -->
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{{tpl:BlogLanguage}}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
+
+  <title>{{tpl:BlogName encode_html="1"}}</title>
+  <meta name="description" lang="{{tpl:BlogLanguage}}" content="{{tpl:BlogDescription cut_string="180" remove_html="1" encode_html="1"}}" />
+  <meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+  <meta name="author" content="{{tpl:BlogEditor encode_html="1"}}" />
+  <meta name="date" scheme="W3CDTF" content="{{tpl:BlogUpdateDate iso8601="1"}}" />
+
+  <link rel="contents" title="{{tpl:lang Archives}}" href="{{tpl:BlogArchiveURL}}" />
+
+  <tpl:Entries no_content="1" lastn="1">
+    <link rel="chapter" href="{{tpl:EntryURL}}" title="{{tpl:EntryTitle encode_html="1"}}" />
+  </tpl:Entries>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="{{tpl:BlogFeedURL type="atom"}}" />
+  <link rel="EditURI" type="application/rsd+xml" title="RSD" href="{{tpl:BlogRSDURL}}" />
+  <link rel="meta" type="application/xbel+xml" title="Blogroll" href="{{tpl:BlogrollXbelLink}}" />
+
+  {{tpl:include src="_head.html"}}
+</head>
+
+<body class="dc-home dc-home-static">
+
+  <div class="container" id="page">
+
+    {{tpl:include src="_top.html"}}
+
+  <tpl:IfBlogStaticEntryURL>
+    {{tpl:BlogStaticEntryURL}}
+    <tpl:Entries>
+      <div class="content-inner">{{tpl:EntryExcerpt}}{{tpl:EntryContent}}</div>
+    </tpl:Entries>
+  {{tpl:else}}
+    <header id="content-info">
+      <h2>{{tpl:lang Welcome}}</h2>
+    </header>
+    <div class="content-inner">
+      <p>{{tpl:lang The list of recents posts is available}} <a href="{{tpl:BlogPostsURL}}">{{tpl:lang here}}</a>.</p>
+    </div>
+  </tpl:IfBlogStaticEntryURL>
+
+  <div class="all_posts">
+      <a href="{{tpl:BlogArchiveURL}}">{{tpl:lang See all posts}} &raquo;</a>
+  </div> <!-- End .all_posts -->
+
+
+  {{tpl:include src="_footer.html"}}
+
+  </div> <!-- End .container -->
+
+</body>
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="{{tpl:BlogLanguage}}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
+
+  <title>{{tpl:EntryTitle encode_html="1"}} - {{tpl:BlogName encode_html="1"}}</title>
+  <meta name="description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
+  <meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
+  <meta name="author" content="{{tpl:EntryAuthorCommonName encode_html="1"}}" />
+  <meta name="date" scheme="W3CDTF" content="{{tpl:EntryDate iso8601="1"}}" />
+
+  <link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
+  <tpl:EntryIf pings_active="1"><link rel="pingback" href="{{tpl:BlogXMLRPCURL}}" /></tpl:EntryIf>
+
+  <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="{{tpl:BlogFeedURL type="atom"}}" />
+
+  {{tpl:include src="_head.html"}}
+
+  <script type="application/json" id="dc_post_remember_str-data">
+    {"post_remember_str": "{{tpl:lang Remember me on this blog}}"}
+  </script>
+  <script src="{{tpl:BlogQmarkURL}}pf=post.js"></script>
+</head>
+
+<body class="dc-page">
+<div class="container" id="page">
+{{tpl:EntryPingData}}
+
+{{tpl:include src="_top.html"}}
+
+  <div id="p{{tpl:EntryID}}" class="post">
+
+    <h2 class="post-title"><a href="{{tpl:EntryURL}}">{{tpl:EntryTitle encode_html="1"}}</a></h2>
+
+    <h6 class="post-info">{{tpl:lang by}} {{tpl:EntryAuthorLink}}</h6>
+
+    <!-- # --BEHAVIOR-- publicEntryBeforeContent -->
+    {{tpl:SysBehavior behavior="publicEntryBeforeContent"}}
+
+    <!-- # Entry with an excerpt -->
+    <tpl:EntryIf extended="1">
+      <div class="post-excerpt">{{tpl:EntryExcerpt}}</div>
+    </tpl:EntryIf>
+
+    <div class="post-content">{{tpl:EntryContent}}</div>
+
+    <!-- # --BEHAVIOR-- publicEntryAfterContent -->
+    {{tpl:SysBehavior behavior="publicEntryAfterContent"}}
+
+    <!-- # Attachments -->
+    <tpl:Attachments>
+      <tpl:AttachmentsHeader>
+        <div id="attachments">
+        <h3>{{tpl:lang Attachments}}</h3>
+        <ul>
+      </tpl:AttachmentsHeader>
+        <li class="{{tpl:AttachmentType}}">
+          <tpl:AttachmentIf is_audio="1">
+            {{tpl:include src="_audio_player.html"}}
+          </tpl:AttachmentIf>
+          <tpl:AttachmentIf is_video="1">
+            {{tpl:include src="_video_player.html"}}
+          </tpl:AttachmentIf>
+          <tpl:AttachmentIf is_audio="0" is_video="0">
+             <a href="{{tpl:AttachmentURL}}"
+      title="{{tpl:AttachmentFileName}} ({{tpl:AttachmentSize}})">{{tpl:AttachmentTitle}}</a>
+          </tpl:AttachmentIf>
+        </li>
+      <tpl:AttachmentsFooter>
+        </ul>
+        </div>
+      </tpl:AttachmentsFooter>
+    </tpl:Attachments>
+
+  </div>
+
+  <!-- # Comments -->
+  <tpl:EntryIf show_comments="1">
+    <tpl:Comments with_pings="1">
+      <tpl:CommentsHeader>
+        <div id="comments">
+          <h3>{{tpl:EntryCommentCount count_all="1" none="no reactions" one="one reaction" more="%s reactions"}}</h3>
+          <ol class="commentlist">
+      </tpl:CommentsHeader>
+            <tpl:CommentIf is_ping="0">
+              <li id="c{{tpl:CommentID}}" class="comment {{tpl:CommentIfMe}} {{tpl:CommentIfOdd}} {{tpl:CommentIfFirst}}">
+            </tpl:CommentIf>
+            <tpl:CommentIf is_ping="1">
+              <li id="c{{tpl:PingID}}" class="ping {{tpl:PingIfOdd}} {{tpl:PingIfFirst}}">
+            </tpl:CommentIf>
+                <p class="comment-author">
+                  {{tpl:lang from}} {{tpl:CommentAuthorLink}} - {{tpl:CommentDate format="%d"}}/{{tpl:CommentDate format="%m"}}/{{tpl:CommentDate format="%Y"}}, {{tpl:CommentTime}}
+                </p>
+                <div class="comment-body">
+                  <a href="#c{{tpl:CommentID}}" class="comment-reply-link">{{tpl:CommentOrderNumber}}</a>
+
+                  <!-- # --BEHAVIOR-- publicCommentBeforeContent -->
+                  {{tpl:SysBehavior behavior="publicCommentBeforeContent"}}
+
+                  {{tpl:CommentContent}}
+
+                  <!-- # --BEHAVIOR-- publicCommentAfterContent -->
+                  {{tpl:SysBehavior behavior="publicCommentAfterContent"}}
+                </div>
+              </li>
+      <tpl:CommentsFooter>
+            </ol>
+          </div>
+      </tpl:CommentsFooter>
+    </tpl:Comments>
+  </tpl:EntryIf>
+
+  <tpl:EntryIf comments_active="1">
+    <tpl:SysIfFormError>
+      <p class="error" id="pr">{{tpl:SysFormError}}</p>
+    </tpl:SysIfFormError>
+
+    <tpl:SysIfCommentPublished>
+      <p class="message" id="pr">{{tpl:lang Your comment has been published.}}</p>
+    </tpl:SysIfCommentPublished>
+
+    <tpl:SysIfCommentPending>
+      <p class="message" id="pr">{{tpl:lang Your comment has been submitted and will be reviewed for publication.}}</p>
+    </tpl:SysIfCommentPending>
+
+    <!-- # Comment form -->
+    <form action="{{tpl:EntryURL}}#pr" method="post" id="comment-form">
+      <tpl:IfCommentPreview>
+        <div id="pr">
+          <h3>{{tpl:lang Your comment}}</h3>
+          <div class="comment-preview">{{tpl:CommentPreviewContent}}</div>
+          <p class="buttons"><input type="submit" class="submit" value="{{tpl:lang send}}" /></p>
+        </div>
+      </tpl:IfCommentPreview>
+
+      <h3>{{tpl:lang Add a comment}}</h3>
+      <fieldset>
+        <!-- # --BEHAVIOR-- publicCommentFormBeforeContent -->
+        {{tpl:SysBehavior behavior="publicCommentFormBeforeContent"}}
+
+        <p class="field"><label for="c_name">{{tpl:lang Name or nickname}}&nbsp;:</label>
+          <input name="c_name" id="c_name" type="text" size="30" maxlength="255"
+           value="{{tpl:CommentPreviewName encode_html="1"}}" />
+        </p>
+
+        <p class="field"><label for="c_mail">{{tpl:lang Email address}}&nbsp;:</label>
+          <input name="c_mail" id="c_mail" type="text" size="30" maxlength="255"
+           value="{{tpl:CommentPreviewEmail encode_html="1"}}" />
+        </p>
+
+        <p class="field"><label for="c_site">{{tpl:lang Website}} ({{tpl:lang optional}})&nbsp;:</label>
+          <input name="c_site" id="c_site" type="text" size="30" maxlength="255"
+           value="{{tpl:CommentPreviewSite encode_html="1"}}" />
+        </p>
+
+        <p style="display:none">
+          <input name="f_mail" type="text" size="30" maxlength="255" value="" />
+        </p>
+
+        <p class="field"><label for="c_content">{{tpl:lang Comment}}&nbsp;:</label>
+          <textarea name="c_content" id="c_content" cols="35"
+           rows="7">{{tpl:CommentPreviewContent raw="1" encode_html="1"}}</textarea>
+        </p>
+
+        <p class="form-help">{{tpl:CommentHelp}}</p>
+
+        <!-- # --BEHAVIOR-- publicCommentFormAfterContent -->
+        {{tpl:SysBehavior behavior="publicCommentFormAfterContent"}}
+      </fieldset>
+
+      <fieldset>
+        <p class="buttons">
+          <input type="submit" class="preview" name="preview" value="{{tpl:lang preview}}" />
+          <tpl:IfPreviewIsNotMandatory>
+            <input type="submit" class="submit" value="{{tpl:lang send}}" />
+          </tpl:IfPreviewIsNotMandatory>
+        </p>
+      </fieldset>
+    </form>
+  </tpl:EntryIf>
+
+  {{tpl:include src="_footer.html"}}
+
+  </div> <!-- End .container #page -->
+</body>
+</html>

@@ -1,0 +1,777 @@
+/*
+Theme Name: zh2
+Theme URI: http://zenhabits.net/theme/
+Author: Leo Babauta
+Author URI: http://leobabauta.com
+Description: A minimalist, content-focused theme.
+Version: 2
+License: Uncopyrighted
+License URI: http://zenhabits.net/open-source-blogging-feel-free-to-steal-my-content/
+
+This theme is uncopyrighted.
+Do whatever you'd like with it.
+*/
+
+// ------------------------------- SASS DECLARATIONS ------------------------------------
+// Colors
+// Light scheme colors
+:root {
+  --main-background: #fff; // background
+  --main-color: #000; // standard color
+  --text-color: #333; // standard text color
+  --alternate-color: #666; // alternate text color
+  --smooth-big-text: #d3d3d3; // used for H1, "see all posts" link
+  --tagline-color: #56a49f; // tagligne, author credit, some input:hover and input:focus
+  --comment-background: #efefef;
+  --comment-number-color: #aeaeae;
+  --input-background: #fff;
+  --submit-color: #eee; // submit buttons
+  --submit-background: #777;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --main-background: #fff; // background
+    --main-color: #000; // standard color
+    --text-color: #333; // standard text color
+    --alternate-color: #666; // alternate text color
+    --smooth-big-text: #d3d3d3; // used for H1, "see all posts" link
+    --tagline-color: #56a49f; // tagligne, author credit, some input:hover and input:focus
+    --comment-background: #efefef;
+    --comment-number-color: #aeaeae;
+    --input-background: #fff;
+    --submit-color: #eee; // submit buttons
+    --submit-background: #777;
+  }
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-background: #372d37; // background
+    --main-color: #fff; // standard color
+    --text-color: #ccc; // standard text color
+    --alternate-color: #999; // alternate text color
+    --smooth-big-text: #76868b; // used for H1, "see all posts" link
+    --tagline-color: #b0a695; // tagligne, author credit, some input:hover and input:focus
+    --comment-background: #605560;
+    --comment-number-color: #c5ced1;
+    --input-background: #cbc4bb;
+    --submit-color: #333; // submit buttons
+    --submit-background: #cbc4bb;
+  }
+}
+$main-background: var(--main-background);
+$main-color: var(--main-color);
+$text-color: var(--text-color);
+$alternate-color: var(--alternate-color);
+$smooth-big-text: var(--smooth-big-text);
+$tagline-color: var(--tagline-color);
+$comment-background: var(--comment-background);
+$comment-number-color: var(--comment-number-color);
+$input-background: var(--input-background);
+$submit-color: var(--submit-color);
+$submit-background: var(--submit-background);
+// Common colors
+$footer-text-color: $text-color;
+$footer-link-color: $alternate-color;
+$post-underline-color: #efefef;
+$blockquote-border-color: #ababab;
+$list-text-color: $text-color;
+$link-text-color: $text-color;
+$link-hover-color: #999;
+$link-underline-color: #c0c0c0;
+$comment-border-color: #dedede;
+$avatar-background: #dedede;
+$avatar-border-color: #cecece;
+$input-border-color: #ccc;
+$input-box-shadow-color: rgba(0, 0, 0, 0.2);
+// Fonts
+$main-font-family: "Open Sans", Helvetica, sans-serif;
+$text-font-family: arsenalregular, "ff-meta-serif-web-pro", Georgia, Cambria, "Times New Roman", Times, serif;
+// mixins
+@mixin opacity($value) {
+  -webkit-opacity: $value;
+  -moz-opacity: $value;
+  opacity: $value;
+}
+@mixin transition($values...) {
+  -webkit-transition: $values;
+  -moz-transition: $values;
+  -ms-transition: $values;
+  transition: $values;
+}
+// meta mixins
+@mixin fade-opacity {
+  @include opacity(0.30); // 30%
+}
+@mixin fade-transition {
+  @include transition(opacity 3s linear);
+}
+@mixin normal-opacity {
+  @include opacity(1); // 100%
+}
+@mixin normal-transition {
+  @include transition(all 2s ease);
+}
+// ------------------------------- END SASS DECLARATIONS ------------------------------------
+/* css reset */
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100.1%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/* end css reset */
+
+@media all {
+  body {
+    // Font
+    font: normal 100% $main-font-family;
+    -webkit-font-smoothing: antialiased; // Colors
+    color: $main-color;
+    background-color: $main-background; // Positions/Dimensions
+    padding: 0.6em;
+  }
+  .top {
+    /* fades out blog title */
+    @include fade-opacity;
+    @include fade-transition;
+    &:hover {
+      /* fades blog title back in on hover */
+      @include normal-opacity;
+      @include normal-transition
+    }
+  }
+  .container {
+    // Positions/Dimensions
+    overflow: hidden;
+    padding: 0 1em;
+    max-width: 42.5em;
+    margin: auto;
+  }
+  /* blog title */
+  h1 {
+    // Font
+    font-size: 150%;
+    font-weight: normal;
+    letter-spacing: 0.01em;
+    text-align: center; // Colors
+    color: $smooth-big-text; // Positions/Dimensions
+    margin: 0 0.05em 0 0;
+    a:link {
+      // Font
+      text-decoration: none; // Colors
+      color: $smooth-big-text; // Borders
+      border-width: 0 0 1px 0;
+      border-style: none none solid none;
+      border-color: $link-underline-color;
+    }
+    a:visited {
+      // Font
+      text-decoration: none; // Colors
+      color: $smooth-big-text; // Borders
+      border-width: 0 0 1px 0;
+      border-style: none none solid none;
+      border-color: $link-underline-color;
+    }
+    a#tagline {
+      // Colors
+      color: $tagline-color;
+    }
+  }
+  /* post title */
+  h2 {
+    // Font
+    font-family: $text-font-family;
+    font-size: 3em;
+    font-weight: normal;
+    text-align: center; // Colors
+    color: $text-color; // Positions/Dimensions
+    margin-top: 1em;
+  }
+  /* subtitles */
+  h3 {
+    // Font
+    font-family: $text-font-family;
+    font-size: 1.8em;
+    font-weight: normal;
+    line-height: 1em;
+    text-align: center; // Colors
+    color: $alternate-color; // Positions/Dimensions
+    margin-top: 1.5em;
+    .subtitle {
+      // Positions/Dimensions
+      margin-top: 0.5em;
+    }
+  }
+  h4 {
+    // Font
+    font-family: $text-font-family;
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1.2em; // Colors
+    color: $alternate-color;
+  }
+  h5 {
+    // Font
+    font-family: $main-font-family;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    text-transform: uppercase; // Colors
+    color: $alternate-color;
+  }
+  /* author credits */
+  h6 {
+    @include fade-opacity;
+    @include fade-transition; // Font
+    font-family: $text-font-family;
+    font-size: 1.2em;
+    letter-spacing: 0.1em;
+    line-height: 1.3em;
+    text-align: center; // Colors
+    color: $alternate-color; // Positions/Dimensions
+    margin: 1em 0 1em 0;
+    &:hover {
+      /* fades author credit back in on hover */
+      @include normal-opacity;
+      @include normal-transition
+    }
+    strong {
+      // Font
+      font-weight: bold; // Colors
+      color: $tagline-color;
+      ;
+    }
+    em {
+      // Font
+      font-style: italic;
+    }
+  }
+  img {
+    // Borders
+    border: 0; // Positions/Dimensions
+    padding: 3px;
+    max-width: 100%;
+    height: auto;
+    a {
+      // Borders
+      border: 0
+    }
+  }
+  p {
+    // Font
+    font-family: $text-font-family;
+    font-size: 1.3em;
+    line-height: 1.635em; // Colors
+    color: $text-color; // Positions/Dimensions
+    margin: 0.7em 0 1em 0;
+  }
+  a {
+    &:link, &:visited, &:hover {
+      // Font
+      text-decoration: none; // Borders
+      border: 0;
+      border-width: 0;
+      border-style: none;
+    }
+    &:link, &:visited {
+      // Colors
+      color: $link-text-color;
+    }
+    &:hover {
+      // Colors
+      color: $link-hover-color;
+    }
+  }
+  /* post styles */
+  .post {
+    strong {
+      font-weight: bold;
+    }
+    em {
+      font-style: italic;
+    }
+    a {
+      &:link, &:visited, &:hover {
+        // Borders
+        border-width: 0 0 1px 0;
+        border-style: none none solid none;
+        border-color: $link-underline-color;
+      }
+    }
+    h2 a, h2 a:link, h2 a:visited, h2 a:hover {
+      // Borders
+      border: none;
+    }
+    ul, ol {
+      // Font
+      font-family: $text-font-family;
+      font-size: 1.3em; // Positions/Dimensions
+      margin-top: 0.5em;
+      margin-bottom: 1em;
+    }
+    ul {
+      list-style-type: disc; // Positions/Dimensions
+      padding: 0.1em 0 0 1.1em;
+    }
+    ol {
+      list-style-type: decimal; // Positions/Dimensions
+      padding: 0.1em 0 0 1.2em;
+    }
+    li {
+      // Font
+      line-height: 1.5em; // Colors
+      color: $list-text-color; // Positions/Dimensions
+      padding: 0.2em 0 0 0;
+    }
+    blockquote {
+      // Font
+      font-family: $main-font-family;
+      font-size: 1.3em; // Colors
+      color: $alternate-color; // Borders
+      border-left: 2px solid $blockquote-border-color; // Positions/Dimensions
+      margin: 1.8em 0.8em;
+      padding: 0 1em 0 1em;
+    }
+  }
+  /* line at bottom of post */
+  .dc-post, .dc-page {
+    .post {
+      // Border
+      border-bottom: 1px solid $post-underline-color; // Positions/Dimensions
+      margin-bottom: 1em;
+    }
+  }
+  /* previous & next posts at bottom */
+  .navigation {
+    // Positions/Dimensions
+    margin-bottom: 3em;
+    p {
+      // Font
+      font-family: $main-font-family;
+      font-size: 0.7em;
+      font-weight: bold;
+      letter-spacing: 0.2em;
+      text-transform: uppercase; // Colors
+      color: $alternate-color; // Positions/Dimensions
+      margin-top: 0;
+      margin-bottom: 1em;
+    }
+  }
+  /* subscription */
+  .subscribe p {
+    // Font
+    font-family: $main-font-family;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 2em;
+    letter-spacing: 0.2em;
+    text-transform: uppercase; // Colors
+    color: $alternate-color; // Positions/Dimensions
+    margin-top: 2em;
+    margin-bottom: 2em;
+  }
+  /* "see all posts" at bottom of home page */
+  .all_posts {
+    // Font
+    font-size: 2.4em;
+    font-weight: bold;
+    line-height: 1.25em; // Positions/Dimensions
+    margin-bottom: 1em;
+    a {
+      // Colors
+      color: $smooth-big-text;
+      &:hover {
+        // Colors
+        color: $alternate-color;
+      }
+    }
+  }
+  /* footer text */
+  .footer {
+    p {
+      // Font
+      font-family: $main-font-family;
+      font-size: .8em;
+      letter-spacing: .2em;
+      text-transform: lowercase; // Colors
+      color: $footer-text-color; // Positions/Dimensions
+      margin: 0;
+      padding: 0;
+    }
+    a {
+      // Colors
+      color: $footer-link-color;
+    }
+  }
+  /* for archives page */
+  #arc {
+    // Positions/Dimensions
+    overflow: hidden;
+    margin: 0 1em 2em 0.4em;
+  }
+  /* for comments */
+  .commentlist {
+    // Positions/Dimensions
+    margin: 10px 5px;
+    padding: 10px;
+    li {
+      list-style: none;
+    }
+    img.avatar, img.gravatar {
+      // Colors
+      background: $avatar-background; // Borders
+      border: solid thin $avatar-border-color; // Positions/Dimensions
+      display: block;
+      float: left;
+      margin: 7px 10px 0 0;
+      width: 32px;
+      height: 32px;
+      padding: 5px;
+    }
+    .comment-author {
+      // Font
+      line-height: 25px;
+    }
+    .comment-body {
+      // Colors
+      background: $comment-background; // Borders
+      border: solid thin $comment-border-color; // Positions/Dimensions
+      margin: 10px 0;
+      padding: 10px;
+      position: relative;
+      p {
+        // Positions/Dimensions
+        margin: 5px;
+      }
+      strong {
+        // Font
+        font-weight: bold;
+      }
+      em {
+        // Font
+        font-style: italic;
+      }
+      a.comment-reply-link {
+        // Colors
+        color: $comment-number-color; // Positions/Dimensions
+        position: absolute;
+        top: 10px;
+        right: 10px;
+      }
+      cite.fn {
+        // Font
+        font-size: 14px;
+        font-style: normal;
+      }
+    }
+  }
+  /* Prelude viewable only for screen reader */
+  #prelude {
+    // Positions/Dimensions
+    overflow: hidden;
+    position: absolute !important;
+    clip: rect(1px 1px 1px 1px);
+    /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    padding: 0 !important;
+    border: 0 !important;
+    height: 1px !important;
+    width: 1px !important;
+  }
+  .dc-404 .post p {
+    // Font
+    text-align: center;
+  }
+  .dc-search dd {
+    // Positions/Dimensions
+    margin-left: 2em;
+  }
+  /* forms */
+  #search-form {
+    // Positions/Dimensions
+    margin-top: 2em;
+  }
+  .field {
+    // Positions/Dimensions
+    margin-bottom: 1em;
+    label {
+      // Font
+      font-size: 0.875em;
+      text-indent: 6px; // Colors
+      color: $alternate-color; // Positions/Dimensions
+      display: block;
+    }
+    input, textarea {
+      // Font
+      font-size: 0.875em; // Colors
+      background-color: $input-background; // Borders
+      border: 1px solid $input-border-color;
+      border-radius: 3px; // Positions/Dimensions
+      display: block;
+      padding: 4px;
+      &:focus {
+        // Borders
+        border-color: $tagline-color;
+      }
+    }
+    textarea {
+      // Positions/Dimensions
+      padding: 0.5em 1em;
+    }
+  }
+  #comment-form input[type=submit], #search-form input[type=submit] {
+    // Font
+    font-size: 0.875em;
+    text-transform: capitalize;
+    text-align: center; // Colors
+    color: $submit-color;
+    background: $submit-background; // Borders
+    border: solid 1px $input-border-color;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px $input-box-shadow-color; // Positions/Dimensions
+    padding: 0.33em 0.66em;
+    display: inline-block;
+    &:hover, &:focus {
+      @include normal-transition; // Font
+      text-decoration: none; // Colors
+      background: $tagline-color;
+      ; // Borders
+      border: solid 1px $tagline-color;
+      ;
+    }
+  }
+  #search-form input[type=submit] {
+    // Font
+    font-size: .66em;
+  }
+  #c_content {
+    // Font
+    font-family: $text-font-family; // Borders
+    border: solid 1px $input-border-color; // Positions/Dimensions
+    width: 95%;
+    padding: 4px;
+    &:focus {
+      // Borders
+      border-color: $tagline-color;
+    }
+  }
+  .form-help {
+    // Font
+    font-size: 0.875em;
+    font-style: italic; // Positions/Dimensions
+    margin-top: 0;
+  }
+}
+/* for iPad-sized devices */
+
+@media only screen and (max-device-width: 50em) {
+  /* makes blog title not fade on touch screen */
+  .top {
+    @include normal-opacity; // Positions/Dimensions
+    margin: auto;
+  }
+  h6 {
+    @include normal-opacity;
+  }
+  .navigation p {
+    // Font
+    font-size: 1em;
+  }
+  .subscribe ul {
+    // Font
+    font-size: 1.8em; // Positions/Dimensions
+    margin-top: 4em;
+  }
+  .footer p {
+    // Font
+    font-size: 1.2em;
+  }
+  h2 {
+    // Font
+    font-size: 2.5em;
+  }
+  h3 {
+    // Font
+    font-size: 2em;
+  }
+  h6 {
+    // Font
+    font-size: 1.5em;
+  }
+  p {
+    // Font
+    font-size: 1.5em;
+    line-height: 1.5em;
+  }
+  .post {
+    ul, ol {
+      // Font
+      font-size: 1.5em;
+      line-height: 1em; // Positions/Dimensions
+      padding: 0.1;
+    }
+  }
+  #arc {
+    // Font
+    font-size: 1.2em;
+  }
+}
+/* for narrower browsers */
+
+@media screen and (max-width: 50em) {
+  /* makes blog title not fade on touch screen */
+  .top {
+    @include normal-opacity; // Positions/Dimensions
+    margin: auto;
+  }
+  h6 {
+    @include normal-opacity;
+  }
+  .navigation p {
+    // Font
+    font-size: .8em;
+  }
+  subscribe ul {
+    // Font
+    font-size: 1.8em; // Positions/Dimensions
+    margin-top: 4em;
+  }
+  .footer p {
+    // Font
+    font-size: 1.2em;
+  }
+  h2 {
+    // Font
+    font-size: 2.5em;
+  }
+  h3 {
+    // Font
+    font-size: 2em;
+  }
+  h6 {
+    // Font
+    font-size: 1.5em;
+  }
+  p {
+    // Font
+    font-size: 1.5em;
+    line-height: 1.5em;
+  }
+  .post {
+    ul, ol {
+      // Font
+      font-size: 1.5em;
+      line-height: 1em; // Positions/Dimensions
+      padding: 0.1;
+    }
+  }
+}
+/* for iPhone-sized devices */
+
+@media only screen and (max-device-width: 30em) {
+  .container {
+    // Positions/Dimensions
+    width: auto;
+  }
+  body {
+    // Positions/Dimensions
+    padding: 0;
+  }
+  h1 {
+    // Font
+    font-size: 2em;
+  }
+  h2 {
+    // Font
+    font-size: 2.5em;
+  }
+  h3 {
+    // Font
+    font-size: 1.8em;
+  }
+  h6 {
+    @include normal-opacity; // Font
+    font-size: 1.3em;
+  }
+  p {
+    // Font
+    font-size: 1.2em;
+    line-height: 1.4em;
+  }
+  .post {
+    ul {
+      list-style-type: disc;
+    }
+    ul, ol {
+      list-style-position: inside; // Font
+      font-size: 1.2em;
+      line-height: 1em; // Positions/Dimensions
+      padding: 0.5em;
+      margin: 0;
+    }
+    li {
+      // Positions/Dimensions
+      margin: 0;
+    }
+  }
+  /* makes blog title not fade on touch screen */
+  .top {
+    @include normal-opacity;
+  }
+  .navigation p {
+    // Font
+    font-size: 1em;
+  }
+  .subscribe p {
+    // Font
+    font-size: 1em; // Positions/Dimensions
+    margin-top: 1em;
+  }
+  .footer p {
+    // Font
+    font-size: 1em;
+  }
+}
+@media print {
+  body {
+    // Font
+    font-family: Helvetica, sans-serif;
+    font-size: 14px; // Colors
+    background: white;
+    color: black; // Positions/Dimensions
+    margin: 10;
+    width: auto;
+  }
+  .container {
+    // Positions/Dimensions
+    display: block;
+  }
+  #prelude, .navigation, .subscribe, .footer {
+    // Positions/Dimensions
+    display: none;
+  }
+}
