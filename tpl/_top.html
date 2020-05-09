@@ -1,4 +1,6 @@
-<div class="top">
+<a class="sr-only sr-only-focusable" href="#main">{{tpl:lang To content}}</a>
+
+<header class="top" role="banner">
   <h1>
 	<a href="{{tpl:BlogURL}}">{{tpl:BlogName encode_html="1"}}</a>
   	<tpl:SysIf has_blog_descr="1">
@@ -8,8 +10,5 @@
 
   <!-- # --BEHAVIOR-- publicTopAfterContent -->
   {{tpl:SysBehavior behavior="publicTopAfterContent"}}
-</div> <!-- /end .top -->
-
-<p id="prelude"><a href="#main">{{tpl:lang To content}}</a> |
-<a href="#blognav">{{tpl:lang To menu}}</a> |
-<a href="#search">{{tpl:lang To search}}</a></p>
+</header> <!-- /end .top -->
+<main id="main" role="main">

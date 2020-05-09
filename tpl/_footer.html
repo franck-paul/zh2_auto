@@ -1,13 +1,26 @@
+</main>
+<footer role="contentinfo">
 <div class="subscribe">
-  <p>
-    <a href="{{tpl:BlogFeedURL type="atom"}}">RSS</a> :: <a href="{{tpl:BlogURL}}contact">Mail</a> :: <a href="https://twitter.com/franckpaul">Twitter</a> :: <a href="https://mstdn.fr/@franckpaul">Mastodon</a>
+  <p role="list">
+    <span role="listitem"><a href="{{tpl:BlogFeedURL type="atom"}}">RSS</a><span aria-hidden="true"> :: </span></span>
+    <span role="listitem"><a href="{{tpl:BlogURL}}contact">Mail</a><span aria-hidden="true"> :: </span></span>
+    <span role="listitem"><a href="{{tpl:BlogURL}}contact">Mail</a><span aria-hidden="true"> :: </span></span>
+    <span role="listitem"><a href="https://twitter.com/franckpaul">Twitter</a><span aria-hidden="true"> :: </span></span>
+    <span role="listitem"><a href="https://mstdn.fr/@franckpaul">Mastodon</a></span>
   </p>
 </div> <!-- /end .subscribe -->
 
 <div class="footer">
-  <p>
-    <a href="{{tpl:BlogURL}}pages/about">{{tpl:lang about}}</a> :: <a href="{{tpl:BlogArchiveURL}}">{{tpl:lang archives}}</a> :: {{tpl:SysPoweredBy}} :: zh2 {{tpl:lang by }} <a href="http://open-time.net/">Franck Paul</a>
+  <p role="list">
+  	<span role="listitem"><a href="{{tpl:BlogURL}}pages/about">{{tpl:lang about}}</a><span aria-hidden="true"> :: </span></span>
+  	<span role="listitem"><a href="{{tpl:BlogArchiveURL}}">{{tpl:lang archives}}</a><span aria-hidden="true"> :: </span></span>
+  	<span role="listitem">{{tpl:SysPoweredBy}}<span aria-hidden="true"> :: </span></span>
+  	<span role="listitem"> zh2 {{tpl:lang by }} <a href="http://open-time.net/">Franck Paul</a></span>
   </p>
 </div>
 
+</footer>
+
 {{tpl:SysBehavior behavior="publicFooterContent"}}
+
+

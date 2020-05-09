@@ -23,7 +23,7 @@
 
   {{tpl:include src="_top.html"}}
 
-  <form action="{{tpl:BlogURL}}" method="get" id="search-form">
+  <form action="{{tpl:BlogURL}}" method="get" id="search-form" role="search">
     <p class="search field">
       <label for="q"></label>{{tpl:lang Search in}} {{tpl:BlogName encode_html="1"}}<br />
       <input class="text" type="text" size="15" maxlength="255" id="q" name="q" value="" />
