@@ -135,23 +135,22 @@
       </tpl:IfCommentPreview>
 
       <h3>{{tpl:lang Add a comment}}</h3>
-      <fieldset>
         <!-- # --BEHAVIOR-- publicCommentFormBeforeContent -->
         {{tpl:SysBehavior behavior="publicCommentFormBeforeContent"}}
 
         <p class="field"><label for="c_name">{{tpl:lang Name or nickname}}&nbsp;:</label>
           <input name="c_name" id="c_name" type="text" size="30" maxlength="255"
-           value="{{tpl:CommentPreviewName encode_html="1"}}" />
+           value="{{tpl:CommentPreviewName encode_html="1"}}" required />
         </p>
 
-        <p class="field"><label for="c_mail">{{tpl:lang Email address}}&nbsp;:</label>
-          <input name="c_mail" id="c_mail" type="text" size="30" maxlength="255"
-           value="{{tpl:CommentPreviewEmail encode_html="1"}}" />
+        <p class="field"><label for="c_mail">{{tpl:lang Email address}} (example@example.org) &nbsp;:</label>
+          <input name="c_mail" id="c_mail" type="email" size="30" maxlength="255"
+           value="{{tpl:CommentPreviewEmail encode_html="1"}}" autocomplete="email" required />
         </p>
 
         <p class="field"><label for="c_site">{{tpl:lang Website}} ({{tpl:lang optional}})&nbsp;:</label>
           <input name="c_site" id="c_site" type="text" size="30" maxlength="255"
-           value="{{tpl:CommentPreviewSite encode_html="1"}}" />
+           value="{{tpl:CommentPreviewSite encode_html="1"}}" required />
         </p>
 
         <p style="display:none">
@@ -160,14 +159,13 @@
 
         <p class="field"><label for="c_content">{{tpl:lang Comment}}&nbsp;:</label>
           <textarea name="c_content" id="c_content" cols="35"
-           rows="7">{{tpl:CommentPreviewContent raw="1" encode_html="1"}}</textarea>
+           rows="7" aria-describedby="form-help" required>{{tpl:CommentPreviewContent raw="1" encode_html="1"}}</textarea>
         </p>
 
-        <p class="form-help">{{tpl:CommentHelp}}</p>
+        <p class="form-help" id="form-help">{{tpl:CommentHelp}}</p>
 
         <!-- # --BEHAVIOR-- publicCommentFormAfterContent -->
         {{tpl:SysBehavior behavior="publicCommentFormAfterContent"}}
-      </fieldset>
 
       <fieldset>
         <p class="buttons">
