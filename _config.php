@@ -8,8 +8,9 @@
  * @copyright Franck Paul (carnet.franck.paul@gmail.com)
  * @copyright GPL-2.0
  */
-
-if (!defined('DC_CONTEXT_ADMIN')) {return;}
+if (!defined('DC_CONTEXT_ADMIN')) {
+    return;
+}
 
 l10n::set(dirname(__FILE__) . '/locales/' . $_lang . '/admin');
 
@@ -28,8 +29,7 @@ if (!is_array($zh2_user)) {
 $zh2_user = array_merge($zh2_base, $zh2_user);
 
 if (!empty($_POST)) {
-    try
-    {
+    try {
         # HTML
         $zh2_user['preview_not_mandatory'] = (integer) !empty($_POST['preview_not_mandatory']);
 

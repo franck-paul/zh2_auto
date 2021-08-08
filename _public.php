@@ -8,10 +8,11 @@
  * @copyright Franck Paul (carnet.franck.paul@gmail.com)
  * @copyright GPL-2.0
  */
-
 namespace themes\zh2_auto;
 
-if (!defined('DC_RC_PATH')) {return;}
+if (!defined('DC_RC_PATH')) {
+    return;
+}
 
 \l10n::set(dirname(__FILE__) . '/locales/' . $_lang . '/main');
 
@@ -45,6 +46,7 @@ class tplZh2Theme
                 }
             }
         }
+
         return '';
     }
 }
