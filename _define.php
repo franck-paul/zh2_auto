@@ -23,6 +23,6 @@ $this->registerModule(
 
         'details'    => 'https://open-time.net/?q=zh2-auto',       // Details URL
         'support'    => 'https://github.com/franck-paul/zh2-auto', // Support URL
-        'repository' => 'https://raw.githubusercontent.com/franck-paul/zh2-auto/main/dcstore.xml'
+        'repository' => 'https://raw.githubusercontent.com/franck-paul/zh2-auto/master/dcstore.xml'
     ]
 );
