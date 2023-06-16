@@ -15,6 +15,7 @@ declare(strict_types=1);
 namespace Dotclear\Theme\zh2_auto;
 
 use dcCore;
+use dcNamespace;
 use dcPage;
 use dcNsProcess;
 use Exception;
@@ -40,10 +41,10 @@ class Config extends dcNsProcess
         if (!empty($_POST)) {
             try {
                 // HTML
-                $zh2_user['preview_not_mandatory'] = (int) !empty($_POST['preview_not_mandatory']);
+                $zh2_user['preview_not_mandatory'] = !empty($_POST['preview_not_mandatory']);
 
                 $theme_ident = preg_replace('/[^a-zA-Z0-9_]/', '_', dcCore::app()->blog->settings->system->theme) . '_style';
-                dcCore::app()->blog->settings->themes->put($theme_ident, json_encode($zh2_user));
+                dcCore::app()->blog->settings->themes->put($theme_ident, $zh2_user, dcNamespace::NS_ARRAY);
 
                 // Blog refresh
                 dcCore::app()->blog->triggerBlog();
@@ -51,9 +52,7 @@ class Config extends dcNsProcess
                 // Template cache reset
                 dcCore::app()->emptyTemplatesCache();
 
-                dcPage::addSuccessNotice(
-                    __('Theme configuration has been successfully updated.')
-                );
+                dcPage::message(__('Theme configuration has been successfully updated.'), true, true);
             } catch (Exception $e) {
                 dcCore::app()->error->add($e->getMessage());
             }
@@ -75,7 +74,6 @@ class Config extends dcNsProcess
 
         $theme_ident = preg_replace('/[^a-zA-Z0-9_]/', '_', dcCore::app()->blog->settings->system->theme) . '_style';
         $zh2_user    = dcCore::app()->blog->settings->themes->get($theme_ident);
-        $zh2_user    = $zh2_user ? (array) json_decode($zh2_user) : [];
         if (!is_array($zh2_user)) {
             $zh2_user = [];
         }
