@@ -1,11 +1,11 @@
 <modules xmlns:da="http://dotaddict.org/da/">
   <module id="zh2_auto">
     <name>zh2_auto</name>
-    <version>2.0</version>
+    <version>3.0</version>
     <author>Franck Paul</author>
     <desc>Zen habits (based on eponym Wordpress theme designed by Leo Babuta)</desc>
-    <file>https://github.com/franck-paul/zh2_auto/releases/download/2.0/theme-zh2_auto-2.0.zip</file>
-    <da:dcmin>2.24</da:dcmin>
+    <file>https://github.com/franck-paul/zh2_auto/releases/download/3.0/theme-zh2_auto-3.0.zip</file>
+    <da:dcmin>2.26</da:dcmin>
     <da:details>https://open-time.net/?q=zh2_auto</da:details>
     <da:support>https://github.com/franck-paul/zh2_auto</da:support>
   </module>
