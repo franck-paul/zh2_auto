@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Dotclear 2 zh2-auto module\n"
+"Project-Id-Version: Dotclear 2 zh2_auto module\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-06 14:27+0200\n"
+"POT-Creation-Date: 2023-06-16 12:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,42 +16,50 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../git-themes/zh2-auto/_config.php:51
+#: ../git-themes/zh2_auto/src/Config.php:55
+msgid "Theme configuration has been successfully updated."
+msgstr ""
+
+#: ../git-themes/zh2_auto/src/Config.php:85
 msgid "Instructions"
 msgstr ""
 
-#: ../git-themes/zh2-auto/_config.php:53
+#: ../git-themes/zh2_auto/src/Config.php:87
 msgid ""
 "<p>This theme is designed to display the last post on home page, using a single column.<br />\n"
 "It doesn't use categories, nor tags, nor widgets, nor pictures and adapts the layout on various devices.</p>"
 msgstr ""
 
-#: ../git-themes/zh2-auto/_config.php:56
+#: ../git-themes/zh2_auto/src/Config.php:90
 msgid "header"
 msgstr ""
 
-#: ../git-themes/zh2-auto/_config.php:58
+#: ../git-themes/zh2_auto/src/Config.php:92
 msgid ""
 "<p>The blog description is used as second part of the title, after the blog's name, with a link to a static page (URL: about).<br />\n"
 "You can modify this link by editing the <code>_top.html</code> template file (see <a href=\"blog_theme.php\">Blog apparence</a> > <a href=\"plugin.php?p=themeEditor\">Theme editor</a>).</p>"
 msgstr ""
 
-#: ../git-themes/zh2-auto/_config.php:63
+#: ../git-themes/zh2_auto/src/Config.php:97
 msgid ""
 "<p>The subcribe links may be modified by editing the <code>_footer.html</code> template file, inside the first <code>&lt;div&gt;</code>, (see <a href=\"blog_theme.php\">Blog apparence</a> > <a href=\"plugin.php?p=themeEditor\">Theme editor</a>).<br />\n"
 "By default you will find here the Atom Feed link of the blog, a link to the contact page (using the <strong>ContactMe</strong> plugin), a link to Twitter and Mastodon.</p>"
 msgstr ""
 
-#: ../git-themes/zh2-auto/_config.php:68
+#: ../git-themes/zh2_auto/src/Config.php:100
+msgid "Footer"
+msgstr ""
+
+#: ../git-themes/zh2_auto/src/Config.php:102
 msgid ""
 "<p>The footer's links may be modified by editing the <code>_footer.html</code> template file, inside the second <code>&lt;div&gt;</code>, (see <a href=\"blog_theme.php\">Blog apparence</a> > <a href=\"plugin.php?p=themeEditor\">Theme editor</a>).<br />\n"
 "By default you will find here a link to a static page (URL: about), a link to the archives, a link to the official Dotclear web site and a link to the author of this theme.</p>"
 msgstr ""
 
-#: ../git-themes/zh2-auto/_config.php:74
+#: ../git-themes/zh2_auto/src/Config.php:108
 msgid "Comment preview is not mandatory"
 msgstr ""
 
-#: ../git-themes/zh2-auto/_config.php:77
+#: ../git-themes/zh2_auto/src/Config.php:111
 msgid "This theme cope with comments and trackbacks, if they are allowed (see <a href=\"blog_pref.php\">blog parameters</a>)."
 msgstr ""

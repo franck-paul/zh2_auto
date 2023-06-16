@@ -5,9 +5,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Dotclear 2 zh2-auto module\n"
+"Project-Id-Version: Dotclear 2 zh2_auto module\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-05-06 14:27+0200\n"
+"POT-Creation-Date: 2023-06-16 12:50+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,82 +16,86 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:8
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:8
 msgid "Message"
 msgstr ""
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:10
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:10
 msgid "Page not found"
 msgstr ""
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:13
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:13
 msgid "Search in"
 msgstr ""
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:15
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:15
 msgid "See all posts"
 msgstr ""
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:16
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:16
 msgid "Subject"
 msgstr ""
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:28
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:22
+msgid "Welcome"
+msgstr ""
+
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:26
 msgid "a footprint left in pure snow"
 msgstr ""
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:29
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:27
 msgid "about"
 msgstr ""
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:30
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:28
 msgid "archives"
 msgstr ""
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:31
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:29
 msgid "blown into"
 msgstr ""
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:32
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:30
 msgid "by "
 msgstr ""
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:34
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:32
 msgid "from"
 msgstr ""
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:36
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:34
 msgid "is lonely"
 msgstr ""
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:37
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:35
 msgid "next post:"
 msgstr ""
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:38
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:36
 msgid "nothing"
 msgstr ""
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:40
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:38
 msgid "our"
 msgstr ""
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:41
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:39
 msgid "page not found, a haïku"
 msgstr ""
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:43
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:41
 msgid "posted on:"
 msgstr ""
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:45
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:43
 msgid "previous post:"
 msgstr ""
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:46
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:44
 msgid "search"
 msgstr ""
 
-#: ../git-themes/zh2-auto/__html_tpl_dummy.php:48
+#: ../git-themes/zh2_auto/__html_tpl_dummy.php:46
 msgid "trackback URL:"
 msgstr ""

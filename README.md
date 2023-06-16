@@ -1,5 +1,11 @@
 # Thème zh2 (auto) pour Dotclear 2
 
+[![Release](https://img.shields.io/github/v/release/franck-paul/zh2_auto)](https://github.com/franck-paul/zh2_auto/releases)
+[![Date](https://img.shields.io/github/release-date/franck-paul/zh2_auto)](https://github.com/franck-paul/zh2_auto/releases)
+[![Issues](https://img.shields.io/github/issues/franck-paul/zh2_auto)](https://github.com/franck-paul/zh2_auto/issues)
+[![Dotaddict](https://img.shields.io/badge/dotaddict-official-green.svg)](https://themes.dotaddict.org/dc2/details/zh2_auto)
+[![License](https://img.shields.io/github/license/franck-paul/zh2_auto)](https://github.com/franck-paul/zh2_auto/blob/master/LICENSE)
+
 Thème pour [Dotclear 2](https://fr.dotclear.org/) adapté du l'éponyme thème zh2 développé pour Wordpress par Leo Babauta ([Zen Habits](http://zenhabits.net/)).
 
 ## Description

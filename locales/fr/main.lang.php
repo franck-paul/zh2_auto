@@ -9,23 +9,26 @@
 # DOT NOT MODIFY THIS FILE !
 #
 
-l10n::$locales['Message'] = 'Message';
-l10n::$locales['Page not found'] = 'Page non trouvée';
-l10n::$locales['Search in'] = 'Rechercher dans';
-l10n::$locales['See all posts'] = 'Voir tous les billets';
-l10n::$locales['Subject'] = 'Sujet';
-l10n::$locales['a footprint left in pure snow'] = 'une empreinte laissée dans la neige pure';
-l10n::$locales['about'] = 'à propos';
-l10n::$locales['archives'] = 'archives';
-l10n::$locales['blown into'] = 'soufflée dans le';
-l10n::$locales['by '] = 'par';
-l10n::$locales['from'] = 'de';
-l10n::$locales['is lonely'] = 'est solitaire';
-l10n::$locales['next post:'] = 'billet suivant :';
-l10n::$locales['nothing'] = 'néant';
-l10n::$locales['our'] = 'notre';
-l10n::$locales['page not found, a haïku'] = 'page non trouvée, un haïku';
-l10n::$locales['posted on:'] = 'publié le :';
-l10n::$locales['previous post:'] = 'billet précédent :';
-l10n::$locales['search'] = 'recherche';
-l10n::$locales['trackback URL:'] = 'URL de rétrolien :';
+use Dotclear\Helper\L10n;
+
+L10n::$locales['Message'] = 'Message';
+L10n::$locales['Page not found'] = 'Page non trouvée';
+L10n::$locales['Search in'] = 'Rechercher dans';
+L10n::$locales['See all posts'] = 'Voir tous les billets';
+L10n::$locales['Subject'] = 'Sujet';
+L10n::$locales['Welcome'] = '';
+L10n::$locales['a footprint left in pure snow'] = 'une empreinte laissée dans la neige pure';
+L10n::$locales['about'] = 'à propos';
+L10n::$locales['archives'] = 'archives';
+L10n::$locales['blown into'] = 'soufflée dans le';
+L10n::$locales['by '] = 'par';
+L10n::$locales['from'] = 'de';
+L10n::$locales['is lonely'] = 'est solitaire';
+L10n::$locales['next post:'] = 'billet suivant :';
+L10n::$locales['nothing'] = 'néant';
+L10n::$locales['our'] = 'notre';
+L10n::$locales['page not found, a haïku'] = 'page non trouvée, un haïku';
+L10n::$locales['posted on:'] = 'publié le :';
+L10n::$locales['previous post:'] = 'billet précédent :';
+L10n::$locales['search'] = 'recherche';
+L10n::$locales['trackback URL:'] = 'URL de rétrolien :';
