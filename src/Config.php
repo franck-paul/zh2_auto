@@ -16,24 +16,21 @@ namespace Dotclear\Theme\zh2_auto;
 
 use dcCore;
 use dcNamespace;
-use dcPage;
-use dcNsProcess;
+use Dotclear\Core\Backend\Notices;
+use Dotclear\Core\Process;
 use Exception;
 use form;
 
-class Config extends dcNsProcess
+class Config extends Process
 {
-    protected static $init = false; /** @deprecated since 2.27 */
     public static function init(): bool
     {
-        static::$init = My::checkContext(My::CONFIG);
-
-        return static::$init;
+        return self::status(My::checkContext(My::CONFIG));
     }
 
     public static function process(): bool
     {
-        if (!static::$init) {
+        if (!self::status()) {
             return false;
         }
 
@@ -53,7 +50,7 @@ class Config extends dcNsProcess
                 // Template cache reset
                 dcCore::app()->emptyTemplatesCache();
 
-                dcPage::message(__('Theme configuration has been successfully updated.'), true, true);
+                Notices::message(__('Theme configuration has been successfully updated.'), true, true);
             } catch (Exception $e) {
                 dcCore::app()->error->add($e->getMessage());
             }
@@ -64,7 +61,7 @@ class Config extends dcNsProcess
 
     public static function render(): void
     {
-        if (!static::$init) {
+        if (!self::status()) {
             return;
         }
 
