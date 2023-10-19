@@ -20,7 +20,7 @@ class FrontendBehaviors
     {
         if ($tag == 'SysIf' && isset($attr['has_blog_descr'])) {
             $sign = (bool) $attr['has_blog_descr'] ? '' : '!';
-            $if[] = $sign . '(strlen(dcCore::app()->blog->desc) !== 0)';
+            $if[] = $sign . '(strlen(App::blog()->desc()) !== 0)';
         }
     }
 }

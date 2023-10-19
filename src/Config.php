@@ -16,6 +16,7 @@ namespace Dotclear\Theme\zh2_auto;
 
 use dcCore;
 use dcNamespace;
+use Dotclear\App;
 use Dotclear\Core\Backend\Notices;
 use Dotclear\Core\Process;
 use Exception;
@@ -41,11 +42,11 @@ class Config extends Process
                 // HTML
                 $zh2_user['preview_not_mandatory'] = !empty($_POST['preview_not_mandatory']);
 
-                $theme_ident = preg_replace('/[^a-zA-Z0-9_]/', '_', dcCore::app()->blog->settings->system->theme) . '_style';
-                dcCore::app()->blog->settings->themes->put($theme_ident, $zh2_user, dcNamespace::NS_ARRAY);
+                $theme_ident = preg_replace('/[^a-zA-Z0-9_]/', '_', App::blog()->settings()->system->theme) . '_style';
+                App::blog()->settings()->themes->put($theme_ident, $zh2_user, dcNamespace::NS_ARRAY);
 
                 // Blog refresh
-                dcCore::app()->blog->triggerBlog();
+                App::blog()->triggerBlog();
 
                 // Template cache reset
                 dcCore::app()->emptyTemplatesCache();
@@ -70,8 +71,8 @@ class Config extends Process
             'preview_not_mandatory' => false,
         ];
 
-        $theme_ident = preg_replace('/[^a-zA-Z0-9_]/', '_', dcCore::app()->blog->settings->system->theme) . '_style';
-        $zh2_user    = dcCore::app()->blog->settings->themes->get($theme_ident);
+        $theme_ident = preg_replace('/[^a-zA-Z0-9_]/', '_', App::blog()->settings()->system->theme) . '_style';
+        $zh2_user    = App::blog()->settings()->themes->get($theme_ident);
         if (!is_array($zh2_user)) {
             $zh2_user = [];
         }
