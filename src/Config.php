@@ -14,8 +14,6 @@ declare(strict_types=1);
 
 namespace Dotclear\Theme\zh2_auto;
 
-use dcCore;
-use dcNamespace;
 use Dotclear\App;
 use Dotclear\Core\Backend\Notices;
 use Dotclear\Core\Process;
@@ -43,17 +41,17 @@ class Config extends Process
                 $zh2_user['preview_not_mandatory'] = !empty($_POST['preview_not_mandatory']);
 
                 $theme_ident = preg_replace('/[^a-zA-Z0-9_]/', '_', App::blog()->settings()->system->theme) . '_style';
-                App::blog()->settings()->themes->put($theme_ident, $zh2_user, dcNamespace::NS_ARRAY);
+                App::blog()->settings()->themes->put($theme_ident, $zh2_user, App::blogWorkspace()::NS_ARRAY);
 
                 // Blog refresh
                 App::blog()->triggerBlog();
 
                 // Template cache reset
-                dcCore::app()->emptyTemplatesCache();
+                App::cache()->emptyTemplatesCache();
 
                 Notices::message(__('Theme configuration has been successfully updated.'), true, true);
             } catch (Exception $e) {
-                dcCore::app()->error->add($e->getMessage());
+                App::error()->add($e->getMessage());
             }
         }
 

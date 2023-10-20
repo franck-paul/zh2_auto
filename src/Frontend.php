@@ -14,7 +14,7 @@ declare(strict_types=1);
 
 namespace Dotclear\Theme\zh2_auto;
 
-use dcCore;
+use Dotclear\App;
 use Dotclear\Core\Process;
 
 class Frontend extends Process
@@ -31,10 +31,10 @@ class Frontend extends Process
         }
 
         // Templates
-        dcCore::app()->tpl->addBlock('IfPreviewIsNotMandatory', FrontendTemplate::IfPreviewIsNotMandatory(...));
+        App::frontend()->template()->addBlock('IfPreviewIsNotMandatory', FrontendTemplate::IfPreviewIsNotMandatory(...));
 
         // Behaviors
-        dcCore::app()->addBehaviors([
+        App::behavior()->addBehaviors([
             'tplIfConditions' => FrontendBehaviors::tplIfConditions(...),
         ]);
 
