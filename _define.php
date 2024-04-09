@@ -14,7 +14,7 @@ $this->registerModule(
     'Franck Paul',
     '5.1',
     [
-        'requires' => [['core', '2.28']],
+        'requires' => [['core', '2.30']],
         'type'     => 'theme',
 
         'details'    => 'https://open-time.net/?q=zh2_auto',

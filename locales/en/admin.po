@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Dotclear 2 zh2_auto module\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-06-16 12:50+0200\n"
+"POT-Creation-Date: 2024-04-09 08:16+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,40 +16,30 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Theme configuration has been successfully updated."
-msgstr ""
-
 msgid "Instructions"
 msgstr ""
 
-msgid ""
-"<p>This theme is designed to display the last post on home page, using a single column.<br />\n"
-"It doesn't use categories, nor tags, nor widgets, nor pictures and adapts the layout on various devices.</p>"
+msgid "This theme is designed to display the last post on home page, using a single column.<br>It doesn't use categories, nor tags, nor widgets, nor pictures and adapts the layout on various devices."
 msgstr ""
 
 msgid "header"
 msgstr ""
 
-msgid ""
-"<p>The blog description is used as second part of the title, after the blog's name, with a link to a static page (URL: about).<br />\n"
-"You can modify this link by editing the <code>_top.html</code> template file (see <a href=\"blog_theme.php\">Blog apparence</a> > <a href=\"plugin.php?p=themeEditor\">Theme editor</a>).</p>"
+#, php-format
+msgid "The blog description is used as second part of the title, after the blog's name, with a link to a static page (URL: about).<br>You can modify this link by editing the <code>_top.html</code> template file (see <a href=\"%s\">Blog apparence</a> > <a href=\"%s\">Theme editor</a>)."
 msgstr ""
 
-msgid ""
-"<p>The subcribe links may be modified by editing the <code>_footer.html</code> template file, inside the first <code>&lt;div&gt;</code>, (see <a href=\"blog_theme.php\">Blog apparence</a> > <a href=\"plugin.php?p=themeEditor\">Theme editor</a>).<br />\n"
-"By default you will find here the Atom Feed link of the blog, a link to the contact page (using the <strong>ContactMe</strong> plugin), a link to Twitter and Mastodon.</p>"
+#, php-format
+msgid "The subcribe links may be modified by editing the <code>_footer.html</code> template file, inside the first <code>&lt;div&gt;</code>, (see <a href=\"%s\">Blog apparence</a> > <a href=\"%s\">Theme editor</a>).<br>By default you will find here the Atom Feed link of the blog, a link to the contact page (using the <strong>ContactMe</strong> plugin), a link to Twitter and Mastodon."
 msgstr ""
 
 msgid "Footer"
 msgstr ""
 
-msgid ""
-"<p>The footer's links may be modified by editing the <code>_footer.html</code> template file, inside the second <code>&lt;div&gt;</code>, (see <a href=\"blog_theme.php\">Blog apparence</a> > <a href=\"plugin.php?p=themeEditor\">Theme editor</a>).<br />\n"
-"By default you will find here a link to a static page (URL: about), a link to the archives, a link to the official Dotclear web site and a link to the author of this theme.</p>"
+#, php-format
+msgid "The footer's links may be modified by editing the <code>_footer.html</code> template file, inside the second <code>&lt;div&gt;</code>, (see <a href=\"%s\">Blog apparence</a> > <a href=\"%s\">Theme editor</a>).<br>By default you will find here a link to a static page (URL: about), a link to the archives, a link to the official Dotclear web site and a link to the author of this theme."
 msgstr ""
 
-msgid "Comment preview is not mandatory"
-msgstr ""
-
-msgid "This theme cope with comments and trackbacks, if they are allowed (see <a href=\"blog_pref.php\">blog parameters</a>)."
+#, php-format
+msgid "This theme cope with comments and trackbacks, if they are allowed (see <a href=\"%s\">blog parameters</a>)."
 msgstr ""

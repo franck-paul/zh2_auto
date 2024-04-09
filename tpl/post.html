@@ -1,25 +1,25 @@
 <!DOCTYPE html>
 <html lang="{{tpl:BlogLanguage}}">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}" />
+  <meta charset="UTF-8">
+  <meta name="ROBOTS" content="{{tpl:BlogMetaRobots}}">
 
   <title>{{tpl:EntryTitle encode_html="1"}} - {{tpl:BlogName encode_html="1"}}</title>
-  <meta name="description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}" />
-  <meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}" />
-  <meta name="author" content="{{tpl:EntryAuthorCommonName encode_html="1"}}" />
-  <meta name="date" scheme="W3CDTF" content="{{tpl:EntryDate iso8601="1"}}" />
+  <meta name="description" lang="{{tpl:EntryLang}}" content="{{tpl:EntryContent full="1" encode_html="1" remove_html="1" cut_string="180"}}">
+  <meta name="copyright" content="{{tpl:BlogCopyrightNotice encode_html="1"}}">
+  <meta name="author" content="{{tpl:EntryAuthorCommonName encode_html="1"}}">
+  <meta name="date" scheme="W3CDTF" content="{{tpl:EntryDate iso8601="1"}}">
 
-  <link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}" />
-  <tpl:EntryIf pings_active="1"><link rel="pingback" href="{{tpl:BlogXMLRPCURL}}" /></tpl:EntryIf>
+  <link rel="contents" href="{{tpl:BlogArchiveURL}}" title="{{tpl:lang Archives}}">
+  <tpl:EntryIf pings_active="1"><link rel="pingback" href="{{tpl:BlogXMLRPCURL}}"></tpl:EntryIf>
 
   <tpl:EntryNext><link rel="next" href="{{tpl:EntryURL}}"
-  title="{{tpl:EntryTitle encode_html="1"}}" /></tpl:EntryNext>
+  title="{{tpl:EntryTitle encode_html="1"}}"></tpl:EntryNext>
 
   <tpl:EntryPrevious><link rel="prev" href="{{tpl:EntryURL}}"
-  title="{{tpl:EntryTitle encode_html="1"}}" /></tpl:EntryPrevious>
+  title="{{tpl:EntryTitle encode_html="1"}}"></tpl:EntryPrevious>
 
-  <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="{{tpl:BlogFeedURL type="atom"}}" />
+  <link rel="alternate" type="application/atom+xml" title="Atom 1.0" href="{{tpl:BlogFeedURL type="atom"}}">
 
   {{tpl:include src="_head.html"}}
 
@@ -157,7 +157,7 @@
         <div id="pr">
           <h3>{{tpl:lang Your comment}}</h3>
           <div class="comment-preview">{{tpl:CommentPreviewContent}}</div>
-          <p class="buttons"><input type="submit" class="submit" value="{{tpl:lang send}}" /></p>
+          <p class="buttons"><input type="submit" class="submit" value="{{tpl:lang send}}"></p>
         </div>
       </tpl:IfCommentPreview>
 
@@ -168,21 +168,21 @@
 
         <p class="field"><label for="c_name">{{tpl:lang Name or nickname}}&nbsp;:</label>
           <input name="c_name" id="c_name" type="text" size="30" maxlength="255"
-           value="{{tpl:CommentPreviewName encode_html="1"}}" required />
+           value="{{tpl:CommentPreviewName encode_html="1"}}" required>
         </p>
 
         <p class="field"><label for="c_mail">{{tpl:lang Email address}} (example@example.org)&nbsp;:</label>
           <input name="c_mail" id="c_mail" type="text" size="30" maxlength="255"
-           value="{{tpl:CommentPreviewEmail encode_html="1"}}" autocomplete="email" required />
+           value="{{tpl:CommentPreviewEmail encode_html="1"}}" autocomplete="email" required>
         </p>
 
         <p class="field"><label for="c_site">{{tpl:lang Website}} ({{tpl:lang optional}})&nbsp;:</label>
           <input name="c_site" id="c_site" type="text" size="30" maxlength="255"
-           value="{{tpl:CommentPreviewSite encode_html="1"}}" />
+           value="{{tpl:CommentPreviewSite encode_html="1"}}">
         </p>
 
         <p style="display:none">
-          <input name="f_mail" type="text" size="30" maxlength="255" value="" />
+          <input name="f_mail" type="text" size="30" maxlength="255" value="">
         </p>
 
         <p class="field"><label for="c_content">{{tpl:lang Comment}}&nbsp;:</label>
@@ -198,10 +198,10 @@
 
       <fieldset>
         <p class="buttons">
-          <input type="submit" class="preview" name="preview" value="{{tpl:lang preview}}" />
-          <tpl:IfPreviewIsNotMandatory>
-            <input type="submit" class="submit" value="{{tpl:lang send}}" />
-          </tpl:IfPreviewIsNotMandatory>
+          <input type="submit" class="preview" name="preview" value="{{tpl:lang preview}}">
+          <tpl:IfCommentPreviewOptional>
+            <input type="submit" class="submit" value="{{tpl:lang send}}">
+          </tpl:IfCommentPreviewOptional>
         </p>
       </fieldset>
     </form>

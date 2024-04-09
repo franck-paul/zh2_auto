@@ -30,9 +30,6 @@ class Frontend extends Process
             return false;
         }
 
-        // Templates
-        App::frontend()->template()->addBlock('IfPreviewIsNotMandatory', FrontendTemplate::IfPreviewIsNotMandatory(...));
-
         // Behaviors
         App::behavior()->addBehaviors([
             'tplIfConditions' => FrontendBehaviors::tplIfConditions(...),
