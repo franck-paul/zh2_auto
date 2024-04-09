@@ -87,16 +87,8 @@ $avatar-border-color: #cecece;
 $input-border-color: #ccc;
 $input-box-shadow-color: rgba(0, 0, 0, 0.2);
 // Fonts
-$main-font-family: "Open Sans",
-Helvetica,
-sans-serif;
-$text-font-family: arsenalregular,
-"ff-meta-serif-web-pro",
-Georgia,
-Cambria,
-"Times New Roman",
-Times,
-serif;
+$main-font-family: 'Open Sans', Helvetica, sans-serif;
+$text-font-family: arsenalregular, 'ff-meta-serif-web-pro', Georgia, Cambria, 'Times New Roman', Times, serif;
 
 // mixins
 @mixin opacity($value) {
@@ -114,7 +106,7 @@ serif;
 
 // meta mixins
 @mixin fade-opacity {
-  @include opacity(0.30); // 30%
+  @include opacity(0.3); // 30%
 }
 
 @mixin fade-transition {
@@ -284,7 +276,7 @@ table {
     &:hover {
       /* fades blog title back in on hover */
       @include normal-opacity;
-      @include normal-transition
+      @include normal-transition;
     }
   }
 
@@ -391,14 +383,13 @@ table {
     &:hover {
       /* fades author credit back in on hover */
       @include normal-opacity;
-      @include normal-transition
+      @include normal-transition;
     }
 
     strong {
       // Font
       font-weight: bold; // Colors
       color: $tagline-color;
-      ;
     }
 
     em {
@@ -416,7 +407,7 @@ table {
 
     a {
       // Borders
-      border: 0
+      border: 0;
     }
   }
 
@@ -430,7 +421,6 @@ table {
   }
 
   a {
-
     &:link,
     &:visited,
     &:hover {
@@ -464,7 +454,6 @@ table {
     }
 
     a {
-
       &:link,
       &:visited,
       &:hover {
@@ -586,8 +575,8 @@ table {
     p {
       // Font
       font-family: $main-font-family;
-      font-size: .8em;
-      letter-spacing: .2em;
+      font-size: 0.8em;
+      letter-spacing: 0.2em;
       text-transform: lowercase; // Colors
       color: $footer-text-color; // Positions/Dimensions
       margin: 0;
@@ -680,8 +669,6 @@ table {
     overflow: hidden;
     position: absolute !important;
     clip: rect(1px 1px 1px 1px);
-    /* IE6, IE7 */
-    clip: rect(1px, 1px, 1px, 1px);
     padding: 0 !important;
     border: 0 !important;
     height: 1px !important;
@@ -738,8 +725,8 @@ table {
     }
   }
 
-  #comment-form input[type=submit],
-  #search-form input[type=submit] {
+  #comment-form input[type='submit'],
+  #search-form input[type='submit'] {
     // Font
     font-size: 0.875em;
     text-transform: capitalize;
@@ -756,16 +743,18 @@ table {
     &:focus {
       @include normal-transition; // Font
       text-decoration: none; // Colors
-      background: $tagline-color;
-      ; // Borders
+      background: $tagline-color; // Borders
       border: solid 1px $tagline-color;
-      ;
     }
   }
 
-  #search-form input[type=submit] {
+  .jstElements button {
+    background-color: $main-background !important;
+  }
+
+  #search-form input[type='submit'] {
     // Font
-    font-size: .66em;
+    font-size: 0.66em;
   }
 
   #c_content {
@@ -792,7 +781,6 @@ table {
 /* for iPad-sized devices */
 
 @media only screen and (max-device-width: 50em) {
-
   /* makes blog title not fade on touch screen */
   .top {
     @include normal-opacity; // Positions/Dimensions
@@ -841,7 +829,6 @@ table {
   }
 
   .post {
-
     ul,
     ol {
       // Font
@@ -860,7 +847,6 @@ table {
 /* for narrower browsers */
 
 @media screen and (max-width: 50em) {
-
   /* makes blog title not fade on touch screen */
   .top {
     @include normal-opacity; // Positions/Dimensions
@@ -873,7 +859,7 @@ table {
 
   .navigation p {
     // Font
-    font-size: .8em;
+    font-size: 0.8em;
   }
 
   subscribe ul {
@@ -909,7 +895,6 @@ table {
   }
 
   .post {
-
     ul,
     ol {
       // Font

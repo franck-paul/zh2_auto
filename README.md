@@ -15,3 +15,11 @@ Ce thème est mono-colonne, n’utilise aucune image, ne met en œuvre ni catég
 Sa configuration est réduite à sa plus simple expression (mais détaille un peu ce qu’il est possible de faire en utilisant l’éditeur des fichiers du thème, entre autre pour modifier les différents liens de l’entête et du pied de page). Un des liens est d’ores et déjà mis sur la page contact servie par le plugin [ContactMe](https://plugins.dotaddict.org/dc2/details/contactMe).
 
 Son aspect varie en fonction du réglage sombre/clair du système/navigateur du visiteur.
+
+## CSS
+
+Compilation :
+
+```terminal
+sass --watch --no-source-map --no-charset ./sass:./
+```
