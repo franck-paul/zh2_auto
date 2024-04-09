@@ -33,6 +33,8 @@ class Config extends Process
             return false;
         }
 
+        My::l10n('admin');
+
         return true;
     }
 
