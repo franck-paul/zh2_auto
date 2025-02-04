@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @brief zh2 auto, a theme for Dotclear 2
  *
@@ -14,6 +15,7 @@ $this->registerModule(
     'Franck Paul',
     '6.3',
     [
+        'date'               => '2003-08-13T13:42:00+0100',
         'requires'           => [['core', '2.30']],
         'type'               => 'theme',
         'information_config' => true,
