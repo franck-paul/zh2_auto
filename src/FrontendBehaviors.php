@@ -19,7 +19,7 @@ use ArrayObject;
 
 class FrontendBehaviors
 {
-    public static function tplIfConditions(string $tag, array $attr, string $content, ArrayObject $if): string
+    public static function tplIfConditions(string $tag, array|ArrayObject $attr, string $content, ArrayObject $if): string
     {
         if ($tag === 'SysIf' && isset($attr['has_blog_descr'])) {
             $sign = (bool) $attr['has_blog_descr'] ? '' : '!';
