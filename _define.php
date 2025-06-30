@@ -13,9 +13,9 @@ $this->registerModule(
     'zh2_auto',
     'Zen habits (based on eponym Wordpress theme designed by Leo Babuta)',
     'Franck Paul',
-    '7.0',
+    '7.1',
     [
-        'date'               => '2025-06-27T13:36:24+0200',
+        'date'               => '2025-06-30T11:08:22+0200',
         'requires'           => [['core', '2.35']],
         'type'               => 'theme',
         'information_config' => true,
