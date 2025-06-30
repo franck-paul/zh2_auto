@@ -20,7 +20,6 @@ Do whatever you'd like with it.
   --tagline-color: #56a49f;
   --comment-background: #efefef;
   --comment-number-color: #aeaeae;
-  --input-background: #fff;
   --submit-color: #eee;
   --submit-background: #777;
 }
@@ -35,7 +34,6 @@ Do whatever you'd like with it.
     --tagline-color: #56a49f;
     --comment-background: #efefef;
     --comment-number-color: #aeaeae;
-    --input-background: #fff;
     --submit-color: #eee;
     --submit-background: #777;
   }
@@ -50,7 +48,6 @@ Do whatever you'd like with it.
     --tagline-color: #b0a695;
     --comment-background: #605560;
     --comment-number-color: #c5ced1;
-    --input-background: #cbc4bb;
     --submit-color: #333;
     --submit-background: #cbc4bb;
   }
@@ -178,7 +175,7 @@ blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-  content: '';
+  content: "";
   content: none;
 }
 
@@ -206,10 +203,7 @@ sub {
 /* end css reset */
 @media all {
   body {
-    font:
-      normal 100% 'Open Sans',
-      Helvetica,
-      sans-serif;
+    font: normal 100% "Open Sans", Helvetica, sans-serif;
     -webkit-font-smoothing: antialiased;
     color: var(--main-color);
     background-color: var(--main-background);
@@ -269,7 +263,7 @@ sub {
   }
   /* post title */
   h2 {
-    font-family: arsenalregular, 'ff-meta-serif-web-pro', Georgia, Cambria, 'Times New Roman', Times, serif;
+    font-family: arsenalregular, "ff-meta-serif-web-pro", Georgia, Cambria, "Times New Roman", Times, serif;
     font-size: 3em;
     font-weight: normal;
     text-align: center;
@@ -278,7 +272,7 @@ sub {
   }
   /* subtitles */
   h3 {
-    font-family: arsenalregular, 'ff-meta-serif-web-pro', Georgia, Cambria, 'Times New Roman', Times, serif;
+    font-family: arsenalregular, "ff-meta-serif-web-pro", Georgia, Cambria, "Times New Roman", Times, serif;
     font-size: 1.8em;
     font-weight: normal;
     line-height: 1em;
@@ -290,14 +284,14 @@ sub {
     margin-top: 0.5em;
   }
   h4 {
-    font-family: arsenalregular, 'ff-meta-serif-web-pro', Georgia, Cambria, 'Times New Roman', Times, serif;
+    font-family: arsenalregular, "ff-meta-serif-web-pro", Georgia, Cambria, "Times New Roman", Times, serif;
     font-size: 1.5em;
     font-weight: bold;
     line-height: 1.2em;
     color: var(--alternate-color);
   }
   h5 {
-    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-family: "Open Sans", Helvetica, sans-serif;
     font-size: 1.2em;
     line-height: 1.2em;
     text-transform: uppercase;
@@ -312,7 +306,7 @@ sub {
     -moz-transition: opacity 3s linear;
     -ms-transition: opacity 3s linear;
     transition: opacity 3s linear;
-    font-family: arsenalregular, 'ff-meta-serif-web-pro', Georgia, Cambria, 'Times New Roman', Times, serif;
+    font-family: arsenalregular, "ff-meta-serif-web-pro", Georgia, Cambria, "Times New Roman", Times, serif;
     font-size: 1.2em;
     letter-spacing: 0.1em;
     line-height: 1.3em;
@@ -347,22 +341,19 @@ sub {
     border: 0;
   }
   p {
-    font-family: arsenalregular, 'ff-meta-serif-web-pro', Georgia, Cambria, 'Times New Roman', Times, serif;
+    font-family: arsenalregular, "ff-meta-serif-web-pro", Georgia, Cambria, "Times New Roman", Times, serif;
     font-size: 1.3em;
     line-height: 1.635em;
     color: var(--text-color);
     margin: 0.7em 0 1em 0;
   }
-  a:link,
-  a:visited,
-  a:hover {
+  a:link, a:visited, a:hover {
     text-decoration: none;
     border: 0;
     border-width: 0;
     border-style: none;
   }
-  a:link,
-  a:visited {
+  a:link, a:visited {
     color: var(--text-color);
   }
   a:hover {
@@ -375,9 +366,7 @@ sub {
   .post em {
     font-style: italic;
   }
-  .post a:link,
-  .post a:visited,
-  .post a:hover {
+  .post a:link, .post a:visited, .post a:hover {
     border-width: 0 0 1px 0;
     border-style: none none solid none;
     border-color: #c0c0c0;
@@ -390,7 +379,7 @@ sub {
   }
   .post ul,
   .post ol {
-    font-family: arsenalregular, 'ff-meta-serif-web-pro', Georgia, Cambria, 'Times New Roman', Times, serif;
+    font-family: arsenalregular, "ff-meta-serif-web-pro", Georgia, Cambria, "Times New Roman", Times, serif;
     font-size: 1.3em;
     margin-top: 0.5em;
     margin-bottom: 1em;
@@ -409,7 +398,7 @@ sub {
     padding: 0.2em 0 0 0;
   }
   .post blockquote {
-    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-family: "Open Sans", Helvetica, sans-serif;
     font-size: 1.3em;
     color: var(--alternate-color);
     border-left: 2px solid #ababab;
@@ -427,7 +416,7 @@ sub {
     margin-bottom: 3em;
   }
   .navigation p {
-    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-family: "Open Sans", Helvetica, sans-serif;
     font-size: 0.7em;
     font-weight: bold;
     letter-spacing: 0.2em;
@@ -438,7 +427,7 @@ sub {
   }
   /* subscription */
   .subscribe p {
-    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-family: "Open Sans", Helvetica, sans-serif;
     font-size: 1em;
     font-weight: bold;
     line-height: 2em;
@@ -463,7 +452,7 @@ sub {
   }
   /* footer text */
   .footer p {
-    font-family: 'Open Sans', Helvetica, sans-serif;
+    font-family: "Open Sans", Helvetica, sans-serif;
     font-size: 0.8em;
     letter-spacing: 0.2em;
     text-transform: lowercase;
@@ -559,7 +548,6 @@ sub {
   .field input,
   .field textarea {
     font-size: 0.875em;
-    background-color: var(--input-background);
     border: 1px solid #ccc;
     border-radius: 3px;
     display: block;
@@ -572,8 +560,8 @@ sub {
   .field textarea {
     padding: 0.5em 1em;
   }
-  #comment-form input[type='submit'],
-  #search-form input[type='submit'] {
+  #comment-form input[type=submit],
+  #search-form input[type=submit] {
     font-size: 0.875em;
     text-transform: capitalize;
     text-align: center;
@@ -585,10 +573,9 @@ sub {
     padding: 0.33em 0.66em;
     display: inline-block;
   }
-  #comment-form input[type='submit']:hover,
-  #comment-form input[type='submit']:focus,
-  #search-form input[type='submit']:hover,
-  #search-form input[type='submit']:focus {
+  #comment-form input[type=submit]:hover, #comment-form input[type=submit]:focus,
+  #search-form input[type=submit]:hover,
+  #search-form input[type=submit]:focus {
     -webkit-transition: all 2s ease;
     -moz-transition: all 2s ease;
     -ms-transition: all 2s ease;
@@ -600,11 +587,11 @@ sub {
   .jstElements button {
     background-color: var(--main-background) !important;
   }
-  #search-form input[type='submit'] {
+  #search-form input[type=submit] {
     font-size: 0.66em;
   }
   #c_content {
-    font-family: arsenalregular, 'ff-meta-serif-web-pro', Georgia, Cambria, 'Times New Roman', Times, serif;
+    font-family: arsenalregular, "ff-meta-serif-web-pro", Georgia, Cambria, "Times New Roman", Times, serif;
     border: solid 1px #ccc;
     width: 95%;
     padding: 4px;
