@@ -1,4 +1,5 @@
 <?php
+
 /**
  * @brief zh2_auto, a plugin for Dotclear 2
  *
@@ -15,13 +16,15 @@ declare(strict_types=1);
 namespace Dotclear\Theme\zh2_auto;
 
 use Dotclear\App;
-use Dotclear\Core\Process;
 use Dotclear\Helper\Html\Form\Para;
 use Dotclear\Helper\Html\Form\Set;
 use Dotclear\Helper\Html\Form\Text;
+use Dotclear\Helper\Process\TraitProcess;
 
-class Config extends Process
+class Config
 {
+    use TraitProcess;
+
     public static function init(): bool
     {
         return self::status(My::checkContext(My::CONFIG));
