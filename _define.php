@@ -9,21 +9,25 @@
  * @copyright Franck Paul (contact@open-time.net)
  * @copyright GPL-2.0
  */
-$this->registerModule(
-    'zh2_auto',
-    'Zen habits (based on eponym Wordpress theme designed by Leo Babuta)',
-    'Franck Paul',
-    '8.0',
-    [
-        'date'               => '2025-09-07T14:22:18+0200',
-        'requires'           => [['core', '2.36']],
-        'type'               => 'theme',
-        'information_config' => true,
-        'overload'           => true,
+declare(strict_types=1);
 
-        'details'    => 'https://open-time.net/?q=zh2_auto',
-        'support'    => 'https://github.com/franck-paul/zh2_auto',
-        'repository' => 'https://raw.githubusercontent.com/franck-paul/zh2_auto/main/dcstore.xml',
-        'license'    => 'gpl2',
-    ]
-);
+if (isset($this) && is_object($this) && method_exists($this, 'registerModule') && isset($this->id) && is_string($this->id)) {
+    $this->registerModule(
+        'zh2_auto',
+        'Zen habits (based on eponym Wordpress theme designed by Leo Babuta)',
+        'Franck Paul',
+        '8.0',
+        [
+            'date'               => '2025-09-07T14:22:18+0200',
+            'requires'           => [['core', '2.36']],
+            'type'               => 'theme',
+            'information_config' => true,
+            'overload'           => true,
+
+            'details'    => 'https://open-time.net/?q=zh2_auto',
+            'support'    => 'https://github.com/franck-paul/zh2_auto',
+            'repository' => 'https://raw.githubusercontent.com/franck-paul/zh2_auto/main/dcstore.xml',
+            'license'    => 'gpl2',
+        ]
+    );
+}
