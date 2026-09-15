@@ -261,11 +261,11 @@ sub {
 }
 
 sup {
-  top: calc(-0.83 * (1em - 4px));
+  inset-block-start: calc(-0.83 * (1em - 4px));
 }
 
 sub {
-  top: calc(0.415 * (1em - 4px));
+  inset-block-start: calc(0.415 * (1em - 4px));
 }
 
 /* end css reset */
@@ -296,7 +296,7 @@ sub {
     // Positions/Dimensions
     overflow: hidden;
     padding: 0 1em;
-    max-width: 42.5em;
+    max-inline-size: 42.5em;
     margin: auto;
   }
 
@@ -308,7 +308,10 @@ sub {
     letter-spacing: 0.01em;
     text-align: center; // Colors
     color: $smooth-big-text; // Positions/Dimensions
-    margin: 0 0.05em 0 0;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    margin-inline-start: 0;
+    margin-inline-end: 0.05em;
 
     a:link {
       // Font
@@ -390,7 +393,10 @@ sub {
     line-height: 1.3em;
     text-align: center; // Colors
     color: $alternate-color; // Positions/Dimensions
-    margin: 1em 0 1em 0;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
 
     &:hover {
       /* fades author credit back in on hover */
@@ -414,8 +420,8 @@ sub {
     // Borders
     border: 0; // Positions/Dimensions
     padding: 3px;
-    max-width: 100%;
-    height: auto;
+    max-inline-size: 100%;
+    block-size: auto;
 
     a {
       // Borders
@@ -429,7 +435,10 @@ sub {
     font-size: 1.3em;
     line-height: 1.635em; // Colors
     color: $text-color; // Positions/Dimensions
-    margin: 0.7em 0 1em 0;
+    margin-block-start: 0.7em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
   }
 
   a {
@@ -490,24 +499,33 @@ sub {
       font-family: $text-font-family;
       font-size: 1.3em; // Positions/Dimensions
       margin-top: 0.5em;
-      margin-bottom: 1em;
+      margin-block-end: 1em;
     }
 
     ul {
       list-style-type: disc; // Positions/Dimensions
-      padding: 0.1em 0 0 1.1em;
+      padding-block-start: 0.1em;
+      padding-block-end: 0;
+      padding-inline-start: 1.1em;
+      padding-inline-end: 0;
     }
 
     ol {
       list-style-type: decimal; // Positions/Dimensions
-      padding: 0.1em 0 0 1.2em;
+      padding-block-start: 0.1em;
+      padding-block-end: 0;
+      padding-inline-start: 1.2em;
+      padding-inline-end: 0;
     }
 
     li {
       // Font
       line-height: 1.5em; // Colors
       color: $list-text-color; // Positions/Dimensions
-      padding: 0.2em 0 0 0;
+      padding-block-start: 0.2em;
+      padding-block-end: 0;
+      padding-inline-start: 0;
+      padding-inline-end: 0;
     }
 
     blockquote {
@@ -517,7 +535,10 @@ sub {
       color: $alternate-color; // Borders
       border-left: 2px solid $blockquote-border-color; // Positions/Dimensions
       margin: 1.8em 0.8em;
-      padding: 0 1em 0 1em;
+      padding-block-start: 0;
+      padding-block-end: 0;
+      padding-inline-start: 1em;
+      padding-inline-end: 1em;
     }
   }
 
@@ -545,7 +566,7 @@ sub {
       text-transform: uppercase; // Colors
       color: $alternate-color; // Positions/Dimensions
       margin-top: 0;
-      margin-bottom: 1em;
+      margin-block-end: 1em;
     }
   }
 
@@ -560,7 +581,7 @@ sub {
     text-transform: uppercase; // Colors
     color: $alternate-color; // Positions/Dimensions
     margin-top: 2em;
-    margin-bottom: 2em;
+    margin-block-end: 2em;
   }
 
   /* "see all posts" at bottom of home page */
@@ -605,7 +626,10 @@ sub {
   #arc {
     // Positions/Dimensions
     overflow: hidden;
-    margin: 0 1em 2em 0.4em;
+    margin-block-start: 0;
+    margin-block-end: 2em;
+    margin-inline-start: 0.4em;
+    margin-inline-end: 1em;
   }
 
   /* for comments */
@@ -624,10 +648,13 @@ sub {
       background: $avatar-background; // Borders
       border: solid thin $avatar-border-color; // Positions/Dimensions
       display: block;
-      float: left;
-      margin: 7px 10px 0 0;
-      width: 32px;
-      height: 32px;
+      float: inline-start;
+      margin-block-start: 7px;
+      margin-block-end: 0;
+      margin-inline-start: 0;
+      margin-inline-end: 10px;
+      inline-size: 32px;
+      block-size: 32px;
       padding: 5px;
     }
 
@@ -663,8 +690,8 @@ sub {
         // Colors
         color: $comment-number-color; // Positions/Dimensions
         position: absolute;
-        top: 10px;
-        right: 10px;
+        inset-block-start: 10px;
+        inset-inline-end: 10px;
       }
 
       cite.fn {
@@ -683,8 +710,8 @@ sub {
     clip: rect(1px 1px 1px 1px);
     padding: 0 !important;
     border: 0 !important;
-    height: 1px !important;
-    width: 1px !important;
+    block-size: 1px !important;
+    inline-size: 1px !important;
   }
 
   .dc-404 .post p {
@@ -1005,7 +1032,7 @@ sub {
     background: white;
     color: black; // Positions/Dimensions
     margin: 10;
-    width: auto;
+    inline-size: auto;
   }
 
   .container {
