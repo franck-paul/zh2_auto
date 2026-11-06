@@ -16,9 +16,9 @@ if (isset($this) && is_object($this) && method_exists($this, 'registerModule') &
         'zh2_auto',
         'Zen habits (based on eponym Wordpress theme designed by Leo Babuta)',
         'Franck Paul',
-        '8.0',
+        '8.1',
         [
-            'date'               => '2025-09-07T14:22:18+0200',
+            'date'               => '2026-11-06T10:13:54+0100',
             'requires'           => [['core', '2.36']],
             'type'               => 'theme',
             'information_config' => true,
